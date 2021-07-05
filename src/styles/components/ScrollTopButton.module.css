@@ -1,0 +1,33 @@
+.component {
+  position: fixed;
+
+  bottom: 15px;
+  right: 25px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 5px;
+
+  font-size: 20px;
+
+  background-color: var(--first-color);
+  color: var(--button-text-color);
+
+  transition: 200ms;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.component:hover {
+  background-color: var(--first-color-light);
+  padding-bottom: 7px;
+}
+
+@media (max-width: 800px) {
+  .component {
+    bottom: 95px;
+  }
+}

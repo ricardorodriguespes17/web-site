@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.container h2 {
+  font-size: 40px;
+}
+
+.container .description {
+  color: var(--text-color-light);
+  font-size: 14px;
+}

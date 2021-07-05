@@ -1,0 +1,27 @@
+.dark-theme {
+  --first-color: #a41728;
+  --first-color-light: #a7414c;
+  --second-color: #111;
+  --highlight-color: #821421;
+  --gray: #999;
+  --title-color: #eee;
+  --background-color: #100d0d;
+  --text-color: #eee;
+  --text-color-light: #aaa;
+  --button-color: #a7414c;
+  --button-text-color: #fff;
+}
+
+.light-theme {
+  --first-color: #a41728;
+  --first-color-light: #a7414c;
+  --second-color: #eee;
+  --highlight-color: #ac0014;
+  --gray: #777;
+  --background-color: #fff;
+  --title-color: #111;
+  --text-color: #111;
+  --text-color-light: #555;
+  --button-color: #a7414c;
+  --button-text-color: #fff;
+}
