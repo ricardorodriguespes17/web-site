@@ -1,0 +1,77 @@
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.content .contentImage {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .contentImage img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.content .details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.content .details .description {
+  font-size: 15px;
+  text-align: justify;
+  color: var(--text-color);
+}
+
+.content .details .downloadCV {
+  width: 150px;
+  height: 40px;
+  min-height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-weight: 400;
+
+  background-color: var(--first-color);
+  color: var(--button-text-color);
+
+  border-radius: 5px;
+}
+
+.content .details .downloadCV:hover {
+  background-color: var(--button-color);
+}
+
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content .contentImage {
+    width: 100%;
+
+    padding: 10px 0;
+  }
+
+  .content .contentImage img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .content .details {
+    width: 100%;
+
+    padding: 20px 0;
+
+    gap: 20px;
+  }
+}

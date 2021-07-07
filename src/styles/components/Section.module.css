@@ -16,4 +16,11 @@
 .container .description {
   color: var(--text-color-light);
   font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .container {
+    min-height: auto;
+  }
 }

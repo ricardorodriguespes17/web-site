@@ -1,5 +1,6 @@
 .container {
   width: 100vw;
+  min-width: 320px;
 
   display: flex;
   flex-direction: column;
@@ -13,6 +14,7 @@
 .container .home {
   width: 100%;
   min-height: calc(100vh - 80px);
+  margin-top: 80px;
 }
 
 .container .home .content {
@@ -55,7 +57,7 @@
 
   border-radius: 5px;
 
-  background-color: var(--button-color);
+  background-color: var(--first-color);
   color: var(--button-text-color);
 
   margin-top: 20px;
@@ -68,7 +70,7 @@
 }
 
 .container .home .content .details .contactMe:hover {
-  background-color: var(--first-color);
+  background-color: var(--button-color);
 }
 
 .container .home .content .details .scrollDown {
@@ -108,7 +110,7 @@
 
 .container .home .content .contentImage .image {
   width: 50%;
-  mask-image: url("../../../public/blob.svg");
+  mask-image: url("../../../public/assets/blob.svg");
   mask-repeat: no-repeat;
   mask-position: 0px -5px;
 }
@@ -143,5 +145,11 @@
   .container .home .content .contentImage .image {
     min-width: 50%;
     width: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 0 50px;
   }
 }

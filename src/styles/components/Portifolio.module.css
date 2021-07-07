@@ -1,0 +1,166 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.content .header {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+.content .header img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.content .header .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 350px;
+}
+
+.content .header .details h2 {
+  font-size: 18px;
+}
+
+.content .header .details p {
+  font-size: 10px;
+  width: 100%;
+}
+
+.content .header .otherData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.content .header .otherData p {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.content .repos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+
+  width: 100%;
+}
+
+.content .repos .item {
+  background-color: #33333330;
+  padding: 10px;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content .repos .item .title {
+  font-size: 14px;
+  color: var(--first-color-light);
+  gap: 5px;
+
+  display: flex;
+  align-items: center;
+}
+
+.content .repos .item .title:hover {
+  color: var(--highlight-color);
+}
+
+.content .repos .item .description {
+  font-size: 10px;
+
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.content .footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .footer .credits {
+  font-size: 10px;
+  font-weight: 100;
+}
+
+.content .footer a {
+  font-size: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.content .footer a .icon {
+  font-size: 15px;
+}
+
+@media (max-width: 800px) {
+  .content .header img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .content .header .details {
+    width: 250px;
+  }
+
+  .content .header .details h2 {
+    font-size: 15px;
+  }
+
+  .content .header .details p {
+    font-size: 8px;
+  }
+
+  .content .header .otherData p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .content .header {
+    flex-direction: column;
+  }
+
+  .content .header .details {
+    align-items: center;
+  }
+
+  .content .repos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .content .header .details {
+    width: 200px;
+    text-align: center;
+  }
+
+  .content .repos {
+    display: flex;
+    flex-direction: column;
+
+    height: 300px;
+
+    overflow: auto;
+  }
+}

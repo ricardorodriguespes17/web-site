@@ -1,0 +1,71 @@
+.component {
+  width: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  background-color: #33333330;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  padding: 20px 30px;
+}
+
+.component .pageContents {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.component .contactMe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+  gap: 10px;
+}
+
+.component .contactMe .contact {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 14px;
+}
+
+.component .socialMedia {
+  display: flex;
+  gap: 5px;
+}
+
+.component .socialMedia a {
+  font-size: 20px;
+}
+
+@media (max-width: 550px) {
+  .component {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .component .pageContents,
+  .component .contactMe {
+    align-items: center;
+  }
+
+  .component .socialMedia {
+    gap: 15px;
+  }
+
+  .component .contactMe .contact {
+    font-size: 12px;
+  }
+
+  .component .socialMedia a {
+    font-size: 18px;
+  }
+}

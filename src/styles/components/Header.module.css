@@ -4,10 +4,30 @@
   align-items: center;
   gap: 15px;
 
-  background-color: var(--background-color);
+  background-color: transparent;
 
-  width: 100%;
+  width: 100vw;
   height: 80px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  padding: 0 70px;
+}
+
+.content.floating {
+  position: fixed;
+  left: 0;
+
+  padding: 20px;
+
+  height: 100vh;
+  width: fit-content;
+
+  flex-direction: column;
+
+  z-index: 20;
 }
 
 .content ul {
@@ -16,44 +36,69 @@
   flex: 1;
 }
 
+.content.floating ul {
+  flex-direction: column;
+  width: fit-content;
+  gap: 10px;
+}
+
+.content ul a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+}
+
+.content ul a .icon {
+  display: none;
+}
+
+.content.floating ul a .icon {
+  display: block;
+}
+
 .content .themeToggle {
   font-size: 18px;
   transition: 150ms;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content .themeToggle:hover {
   color: var(--highlight-color);
 }
 
-.content .openMenu {
-  display: none;
-}
-
-@media (max-width: 800px) {
-  .content {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-
-    z-index: 10;
-
-    padding: 10px;
+@media (max-width: 700px) {
+  .content ul {
+    gap: 20px;
   }
 
-  .content ul {
+  .content.floating ul {
+    gap: 35px;
+  }
+
+  .content ul a .icon {
+    display: block;
+    font-size: 25px;
+  }
+
+  .content .themeToggle {
+    font-size: 25px;
+  }
+
+  .content ul a p {
     display: none;
   }
+}
 
-  .content .openMenu {
-    display: block;
+@media (max-width: 400px) {
+  .content {
+    padding: 0 50px;
   }
 
-  .content .menu {
-    position: fixed;
-    bottom: 0;
-
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  .content.floating {
+    width: 30px;
   }
 }

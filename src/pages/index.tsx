@@ -2,20 +2,31 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { BiMouse } from "react-icons/bi";
 import { BsArrowDownShort } from "react-icons/bs";
+import About from "../components/About";
+import Footer from "../components/Footer";
+import Formation from "../components/Formation";
 import Header from "../components/Header";
+import Portifolio from "../components/Portifolio";
 import ScrollTopButton from "../components/ScrollTopButton";
-import Section from "../components/Section";
+import Skills from "../components/Skills";
 
 import styles from "../styles/pages/Home.module.css";
 
 export default function Home() {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
   const [isShowedScrollTop, setIsShowedScrollTop] = useState(false);
+  const [isLateralHeader, setIsLateralHeader] = useState(false);
 
   useEffect(() => {
     const element = document.getElementById("__next");
 
     element.onscroll = () => {
+      if (element.scrollTop > 50) {
+        setIsLateralHeader(true);
+      } else {
+        setIsLateralHeader(false);
+      }
+
       if (element.scrollTop > 200) {
         setIsShowedScrollTop(true);
       } else {
@@ -32,6 +43,7 @@ export default function Home() {
     <div className={styles.container} onScroll={() => console.log("aqui")}>
       <Header
         isDarkTheme={isDarkTheme}
+        floating={isLateralHeader}
         onChangeTheme={() => setIsDarkTheme(!isDarkTheme)}
       />
 
@@ -59,23 +71,17 @@ export default function Home() {
             </a>
           </div>
           <div className={styles.contentImage}>
-            <img src="profile.png" className={styles.image} />
+            <img src="assets/profile.png" className={styles.image} />
           </div>
         </div>
       </div>
 
-      <Section id="about" title="Sobre" description="Um pouco sobre mim" />
-      <Section
-        id="skills"
-        title="Habilidades"
-        description="Minhas habilidades na área"
-      />
-      <Section
-        id="portifolio"
-        title="Portifólio"
-        description="Meu portifólio no Github"
-      />
-      <Section id="contact" title="Contato" description="Entre em contato" />
+      <About />
+      <Formation />
+      <Skills />
+      <Portifolio />
+
+      <Footer />
 
       {isShowedScrollTop && <ScrollTopButton />}
     </div>

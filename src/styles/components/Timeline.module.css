@@ -1,0 +1,136 @@
+.component {
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.component .line {
+  width: 100%;
+  height: 3px;
+
+  background-color: var(--first-color-light);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.component .line .dots {
+  height: 100%;
+
+  margin: 0 7px;
+
+  display: flex;
+  gap: 7px;
+}
+
+.component .line .dots div {
+  height: 100%;
+  width: 7px;
+  background-color: var(--background-color);
+}
+
+.component .point {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  border: 3px solid var(--first-color-light);
+
+  background-color: var(--background-color);
+
+  position: absolute;
+}
+
+.component .descriptions {
+  width: 100%;
+
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.component .pointDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  width: 200px;
+
+  font-size: 12px;
+
+  text-align: center;
+
+  position: absolute;
+}
+
+.component .pointDescription strong {
+  color: var(--first-color-light);
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (max-width: 850px) {
+  .component .line .dots {
+    margin: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .component .descriptions .pointDescription {
+    top: auto !important;
+  }
+
+  .component .point {
+    top: auto !important;
+  }
+}
+
+@media (max-width: 699px) {
+  .component {
+    flex-direction: row;
+
+    margin-top: 50px;
+
+    height: 300px;
+  }
+
+  .component .line {
+    width: 3px;
+    height: 100%;
+
+    flex-direction: column;
+  }
+
+  .component .line .dots {
+    display: none;
+  }
+
+  .component .descriptions {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .component .pointDescription {
+    height: 50px;
+    max-width: calc(100% - 30px);
+  }
+
+  .component .descriptions .pointDescription {
+    margin-left: 0 !important;
+  }
+
+  .component .point {
+    left: auto !important;
+  }
+}
