@@ -12,6 +12,8 @@
 }
 
 .container .home {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: calc(100vh - 80px);
   margin-top: 80px;
@@ -19,7 +21,8 @@
 
 .container .home .content {
   display: flex;
-  height: 100%;
+  align-items: center;
+  flex: 1;
 
   padding: 50px 0;
 }

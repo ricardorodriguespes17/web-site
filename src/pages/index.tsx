@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { BiMouse } from "react-icons/bi";
 import { BsArrowDownShort } from "react-icons/bs";
@@ -7,8 +7,10 @@ import Footer from "../components/Footer";
 import Formation from "../components/Formation";
 import Header from "../components/Header";
 import Portifolio from "../components/Portifolio";
+import Projects from "../components/Projects";
 import ScrollTopButton from "../components/ScrollTopButton";
 import Skills from "../components/Skills";
+import { PageContext } from "../contexts/pageContext";
 
 import styles from "../styles/pages/Home.module.css";
 
@@ -16,6 +18,8 @@ export default function Home() {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
   const [isShowedScrollTop, setIsShowedScrollTop] = useState(false);
   const [isLateralHeader, setIsLateralHeader] = useState(false);
+
+  const { onMouseInPage } = useContext(PageContext);
 
   useEffect(() => {
     const element = document.getElementById("__next");
@@ -40,14 +44,18 @@ export default function Home() {
   }, [isDarkTheme]);
 
   return (
-    <div className={styles.container} onScroll={() => console.log("aqui")}>
+    <div className={styles.container}>
       <Header
         isDarkTheme={isDarkTheme}
         floating={isLateralHeader}
         onChangeTheme={() => setIsDarkTheme(!isDarkTheme)}
       />
 
-      <div className={styles.home} id="home">
+      <div
+        className={styles.home}
+        id="home"
+        onMouseEnter={() => onMouseInPage("home")}
+      >
         <div className={styles.content}>
           <div className={styles.details}>
             <h1>Prazer, Ricardo Rodrigues</h1>
@@ -80,6 +88,7 @@ export default function Home() {
       <Formation />
       <Skills />
       <Portifolio />
+      <Projects />
 
       <Footer />
 

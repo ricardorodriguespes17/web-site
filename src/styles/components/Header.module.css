@@ -49,6 +49,10 @@
   height: 30px;
 }
 
+.content ul a.highlight {
+  color: var(--first-color-light);
+}
+
 .content ul a .icon {
   display: none;
 }

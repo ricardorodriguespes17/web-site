@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   AiFillFacebook,
   AiFillLinkedin,
@@ -5,11 +6,18 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 import { FiMail } from "react-icons/fi";
+import { PageContext } from "../contexts/pageContext";
 import styles from "../styles/components/Footer.module.css";
 
 export default function Footer() {
+  const { onMouseInPage } = useContext(PageContext);
+
   return (
-    <footer className={styles.component} id="contact">
+    <footer
+      className={styles.component}
+      id="contact"
+      onMouseEnter={() => onMouseInPage("contact")}
+    >
       <div className={styles.pageContents}>
         <a href="#home">Home</a>
         <a href="#about">Sobre</a>

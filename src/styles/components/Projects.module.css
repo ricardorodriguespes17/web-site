@@ -1,0 +1,44 @@
+.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.content:hover .project {
+  opacity: 0.5;
+}
+
+.content .project {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  transition: 400ms;
+  cursor: pointer;
+  position: relative;
+}
+
+.content .project:hover {
+  flex: 2;
+  opacity: 1;
+}
+
+.content .project .title {
+  opacity: 0;
+  transition: 400ms;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 100%;
+}
+
+.content .project:hover .title {
+  opacity: 1;
+  color: #fff;
+  text-shadow: 1px 1px 5px black, 0 0 0.5em black, 0 0 0.5em black;
+}
+
+.content .project img {
+  width: 100%;
+}

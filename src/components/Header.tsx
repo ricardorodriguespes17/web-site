@@ -1,11 +1,15 @@
 import styles from "../styles/components/Header.module.css";
 import { BiMoon, BiSun, BiHome } from "react-icons/bi";
-import { AiOutlineRocket, AiOutlineUser } from "react-icons/ai";
+import {
+  AiOutlineRocket,
+  AiOutlineUser,
+  AiOutlineProject,
+} from "react-icons/ai";
 import { BsChatDots } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
 import { IoMdSchool } from "react-icons/io";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useContext, useState } from "react";
+import { PageContext } from "../contexts/pageContext";
 
 interface HeaderProps {
   isDarkTheme: boolean;
@@ -18,6 +22,18 @@ export default function Header({
   floating,
   onChangeTheme,
 }: HeaderProps) {
+  const { mouseInPage } = useContext(PageContext);
+
+  const [links] = useState([
+    { link: "home", title: "Home", Icon: BiHome },
+    { link: "about", title: "Sobre", Icon: AiOutlineUser },
+    { link: "formation", title: "Formação", Icon: IoMdSchool },
+    { link: "skills", title: "Habilidades", Icon: AiOutlineRocket },
+    { link: "portifolio", title: "Portifólio", Icon: FiGithub },
+    { link: "projects", title: "Projetos", Icon: AiOutlineProject },
+    { link: "contact", title: "Contato", Icon: BsChatDots },
+  ]);
+
   return (
     <header
       className={
@@ -25,42 +41,17 @@ export default function Header({
       }
     >
       <ul>
-        <li>
-          <a href="#home">
-            <BiHome className={styles.icon} title="Home" />
-            {!floating && <p>Home</p>}
-          </a>
-        </li>
-        <li>
-          <a href="#about">
-            <AiOutlineUser className={styles.icon} title="Sobre" />
-            {!floating && <p>Sobre</p>}
-          </a>
-        </li>
-        <li>
-          <a href="#formation">
-            <IoMdSchool className={styles.icon} title="Formação" />
-            {!floating && <p>Formação</p>}
-          </a>
-        </li>
-        <li>
-          <a href="#skills">
-            <AiOutlineRocket className={styles.icon} title="Habilidades" />
-            {!floating && <p>Habilidades</p>}
-          </a>
-        </li>
-        <li>
-          <a href="#portifolio">
-            <FiGithub className={styles.icon} title="Portifólio" />
-            {!floating && <p>Portifólio</p>}
-          </a>
-        </li>
-        <li>
-          <a href="#contact">
-            <BsChatDots className={styles.icon} title="Contato" />
-            {!floating && <p>Contato</p>}
-          </a>
-        </li>
+        {links.map((item) => (
+          <li key={item.link}>
+            <a
+              href={`#${item.link}`}
+              className={mouseInPage === item.link && styles.highlight}
+            >
+              <item.Icon className={styles.icon} title={item.title} />
+              {!floating && <p>{item.title}</p>}
+            </a>
+          </li>
+        ))}
       </ul>
 
       <button className={styles.themeToggle} onClick={() => onChangeTheme()}>

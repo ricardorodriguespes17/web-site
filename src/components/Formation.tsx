@@ -49,7 +49,12 @@ export default function Formation() {
     },
     {
       starting: 2020,
+      finishing: 2021,
       description: "Estágio em Programação - Mercadótica Franquias",
+    },
+    {
+      starting: 2021,
+      description: "Estágio em Desenvolvimento WEB - FWC Tecnologia",
     },
   ]);
 
