@@ -42,3 +42,9 @@
 .content .project img {
   width: 100%;
 }
+
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,153 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  margin-top: 80px;
+}
+
+.home .content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  padding: 50px 0;
+}
+
+.home .content > div {
+  flex: 1;
+}
+
+.home .content .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.home .content .details .subTitle {
+  color: var(--text-color-light);
+  font-size: 20px;
+}
+
+.home .content .details .description {
+  text-align: justify;
+  font-size: 16px;
+
+  margin-top: 30px;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.home .content .details .contactMe {
+  width: 200px;
+  height: 50px;
+  min-height: 50px;
+
+  border-radius: 5px;
+
+  background-color: var(--first-color);
+  color: var(--button-text-color);
+
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 200ms;
+}
+
+.home .content .details .contactMe:hover {
+  background-color: var(--button-color);
+}
+
+.home .content .details .scrollDown {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+
+  height: 50px;
+  width: fit-content;
+
+  transition: 500ms;
+}
+
+.home .content .details .scrollDown:hover {
+  padding-top: 10px;
+}
+
+.home .content .details .scrollDown .mouseIcon {
+  font-size: 20px;
+}
+
+.home .content .details .scrollDown p {
+  font-size: 12px;
+}
+
+.home .content .details .scrollDown .arrowDownIcon {
+  font-size: 20px;
+}
+
+.home .content .contentImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .content .contentImage .image {
+  width: 50%;
+  mask-image: url("../../../public/assets/blob.svg");
+  mask-repeat: no-repeat;
+  mask-position: 0px -5px;
+}
+
+@media (max-width: 800px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home .content {
+    display: grid;
+    grid-template-areas: "image" "details";
+    padding: 10px 0;
+  }
+
+  .home .content .contentImage {
+    grid-area: image;
+    height: auto;
+  }
+
+  .home .content .details {
+    grid-area: details;
+  }
+
+  .home .content .details .scrollDown {
+    display: none;
+  }
+
+  .home .content .contentImage .image {
+    min-width: 50%;
+    width: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home {
+    margin-top: 120px;
+  }
+
+  .home .content .details {
+    align-items: center;
+  }
+
+  .home .content .details h1 {
+    text-align: center;
+  }
+}

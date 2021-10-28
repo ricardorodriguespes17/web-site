@@ -43,10 +43,7 @@ export default function Header({
       <ul>
         {links.map((item) => (
           <li key={item.link}>
-            <a
-              href={`#${item.link}`}
-              className={mouseInPage === item.link && styles.highlight}
-            >
+            <a href={`#${item.link}`}>
               <item.Icon className={styles.icon} title={item.title} />
               {!floating && <p>{item.title}</p>}
             </a>

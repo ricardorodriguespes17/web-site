@@ -5,6 +5,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
+          {/* Favicon */}
+          <link rel="shortcut icon" href="/favicon.ico" />
           {/* Importar fonte Poppins */}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

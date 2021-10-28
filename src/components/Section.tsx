@@ -18,11 +18,7 @@ export default function Section({
   const { onMouseInPage } = useContext(PageContext);
 
   return (
-    <section
-      id={id}
-      className={styles.container}
-      onMouseEnter={() => onMouseInPage(id)}
-    >
+    <section id={id} className={styles.container}>
       <h2>{title}</h2>
       <p className={styles.description}>{description}</p>
 

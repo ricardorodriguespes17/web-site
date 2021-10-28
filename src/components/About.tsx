@@ -1,5 +1,5 @@
 import Section from "./Section";
-import { BsDownload } from "react-icons/bs";
+import { BsChatSquareDots, BsDownload } from "react-icons/bs";
 
 import styles from "../styles/components/About.module.css";
 
@@ -12,12 +12,21 @@ export default function About() {
         </div>
 
         <div className={styles.details}>
-          <p className={styles.description}>
-            Lorem ipsum convallis nunc malesuada suspendisse consequat tortor
-            aptent mollis ultrices nisl potenti mattis auctor in, auctor sed
-            mauris curabitur condimentum aliquam id tempor sit mi rhoncus nulla
-            mattis.
-          </p>
+          <div className={styles.detailsTopic}>
+            <BsChatSquareDots />
+            <p className={styles.description}>
+              Cursando Ciência da Computação na Universidade Estadual do
+              Sudoeste da Bahia (UESB).
+            </p>
+          </div>
+          <div className={styles.detailsTopic}>
+            <BsChatSquareDots />
+            <p className={styles.description}>
+              Em busca de novos desafios na área da programação, contribuindo
+              cada vez mais para o avanço da tecnologia da informação, pois
+              acredito que isso tende a mudar cada vez mais o mundo para melhor.
+            </p>
+          </div>
 
           <a
             href="Ricardo_CV.pdf"

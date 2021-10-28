@@ -54,7 +54,13 @@ export default function Formation() {
     },
     {
       starting: 2021,
-      description: "Estágio em Desenvolvimento WEB - FWC Tecnologia",
+      finishing: 2021,
+
+      description: "Desenvolvedor de software - FWC Tecnologia",
+    },
+    {
+      starting: 2021,
+      description: "Desenvolvedor de software - Órulo",
     },
   ]);
 

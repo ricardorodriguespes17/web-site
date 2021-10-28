@@ -12,6 +12,7 @@
 .content .header {
   display: flex;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .content .header button {
@@ -35,4 +36,14 @@
 .content .header button.selected {
   background-color: var(--first-color);
   color: #fff;
+}
+
+@media (max-width: 400px) {
+  .content {
+    padding: 0;
+  }
+
+  .content .header {
+    flex-direction: column;
+  }
 }
