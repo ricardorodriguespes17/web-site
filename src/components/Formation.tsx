@@ -50,7 +50,7 @@ export default function Formation() {
     {
       starting: 2020,
       finishing: 2021,
-      description: "Estágio em Programação - Mercadótica Franquias",
+      description: "Desenvolvedor Full stack - Mercadótica Franquias",
     },
     {
       starting: 2021,
