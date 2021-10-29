@@ -34,12 +34,13 @@
   align-items: center;
   gap: 5px;
   color: var(--first-color-light);
+  width: 400px;
+  max-width: 100%;
 }
 
 .content .details .description {
   font-size: 15px;
-  width: 400px;
-  max-width: 100%;
+  width: 100%;
   text-align: justify;
   color: var(--text-color);
 }
