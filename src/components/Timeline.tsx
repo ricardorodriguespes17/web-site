@@ -1,4 +1,5 @@
 import { AiOutlineCalendar } from "react-icons/ai";
+import useInfo from "../hooks/useInfo";
 import styles from "../styles/components/Timeline.module.css";
 
 interface TimelineProps {
@@ -6,9 +7,8 @@ interface TimelineProps {
 }
 
 interface FormationType {
-  starting: number;
-  finishing?: number;
-  description: string;
+  title: string;
+  period: string;
 }
 
 export default function Timeline({ timePoints }: TimelineProps) {
@@ -26,14 +26,10 @@ export default function Timeline({ timePoints }: TimelineProps) {
                   top: `${(index / timePoints.length) * 100}%`,
                 }}
               >
-                <p>{point.description}</p>
+                <p>{point.title}</p>
                 <strong>
                   <AiOutlineCalendar />
-                  {point.starting}
-                  {point.finishing
-                    ? point.finishing !== point.starting &&
-                      ` - ${point.finishing}`
-                    : " - atual"}
+                  {point.period}
                 </strong>
               </div>
             );
@@ -66,14 +62,10 @@ export default function Timeline({ timePoints }: TimelineProps) {
                   top: `${(index / timePoints.length) * 100}%`,
                 }}
               >
-                <p>{point.description}</p>
+                <p>{point.title}</p>
                 <strong>
                   <AiOutlineCalendar />
-                  {point.starting}
-                  {point.finishing
-                    ? point.finishing !== point.starting &&
-                      ` - ${point.finishing}`
-                    : " - atual"}
+                  {point.period}
                 </strong>
               </div>
             );

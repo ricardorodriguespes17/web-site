@@ -5,12 +5,12 @@
   --highlight-color: #821421;
   --gray: #444;
   --title-color: #eee;
-  --background-color: #100d0d;
+  --background-color: #0a0909;
   --background-color-secondary: linear-gradient(
     to right,
-    #100d0d,
-    #120f0f,
-    #100d0d
+    #0a0909,
+    #0f0c0c,
+    #0a0909
   );
   --text-color: #eee;
   --text-color-light: #aaa;

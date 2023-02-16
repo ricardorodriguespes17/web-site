@@ -2,8 +2,11 @@ import Section from "./Section";
 import { BsChatSquareDots, BsDownload } from "react-icons/bs";
 
 import styles from "../styles/components/About.module.css";
+import useInfo from "../hooks/useInfo";
 
 export default function About() {
+  const { aboutText1, aboutText2 } = useInfo()
+
   return (
     <Section id="about" title="Sobre" description="Um pouco sobre mim">
       <div className={styles.content}>
@@ -14,18 +17,11 @@ export default function About() {
         <div className={styles.details}>
           <div className={styles.detailsTopic}>
             <BsChatSquareDots />
-            <p className={styles.description}>
-              Cursando Ciência da Computação na Universidade Estadual do
-              Sudoeste da Bahia (UESB).
-            </p>
+            <p className={styles.description}>{aboutText1}</p>
           </div>
           <div className={styles.detailsTopic}>
             <BsChatSquareDots />
-            <p className={styles.description}>
-              Em busca de novos desafios na área da programação, contribuindo
-              cada vez mais para o avanço da tecnologia da informação, pois
-              acredito que isso tende a mudar cada vez mais o mundo para melhor.
-            </p>
+            <p className={styles.description}>{aboutText2}</p>
           </div>
 
           <a

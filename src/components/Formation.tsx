@@ -5,64 +5,14 @@ import { useState } from "react";
 import Timeline from "./Timeline";
 import { IoMdSchool } from "react-icons/io";
 import { MdBusinessCenter } from "react-icons/md";
-
-interface FormationType {
-  starting: number;
-  finishing?: number;
-  description: string;
-}
+import useInfo from "../hooks/useInfo";
 
 export default function Formation() {
   const [formationOpened, setFormationOpened] = useState<
     "academic" | "professional"
   >("academic");
 
-  const [academicFormation] = useState<FormationType[]>([
-    {
-      starting: 2014,
-      finishing: 2016,
-      description: "Técnico em Informática - IFNMG",
-    },
-    {
-      starting: 2019,
-      finishing: 2019,
-      description: "Curso de Javascript - Udemy",
-    },
-    {
-      starting: 2019,
-      finishing: 2019,
-      description: "Curso de React Native - Udemy",
-    },
-    { starting: 2017, description: "Ciência da Computação - UESB" },
-  ]);
-
-  const [professionalFormation] = useState<FormationType[]>([
-    {
-      starting: 2016,
-      finishing: 2016,
-      description: "Estágio em TI - Informax",
-    },
-    {
-      starting: 2018,
-      finishing: 2018,
-      description: "Minicurso Android Studio - UESB",
-    },
-    {
-      starting: 2020,
-      finishing: 2021,
-      description: "Desenvolvedor Full stack - Mercadótica Franquias",
-    },
-    {
-      starting: 2021,
-      finishing: 2021,
-
-      description: "Desenvolvedor de software - FWC Tecnologia",
-    },
-    {
-      starting: 2021,
-      description: "Desenvolvedor de software - Órulo",
-    },
-  ]);
+  const {academicFormation, professionalFormation} = useInfo()
 
   return (
     <Section

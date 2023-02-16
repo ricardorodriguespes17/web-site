@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { BiMouse } from "react-icons/bi";
 import { BsArrowDownShort } from "react-icons/bs";
 import { PageContext } from "../contexts/pageContext";
+import useInfo from "../hooks/useInfo";
 
 import styles from "../styles/components/Presentation.module.css";
 
 export default function Presentation() {
   const { onMouseInPage } = useContext(PageContext);
+  const { title, subtitle, presentation } = useInfo();
 
   return (
     <div
@@ -16,15 +18,10 @@ export default function Presentation() {
     >
       <div className={styles.content}>
         <div className={styles.details}>
-          <h1>Prazer, Ricardo Rodrigues</h1>
-          <h3 className={styles.subTitle}>Desenvolvedor Full Stack</h3>
-
-          <p className={styles.description}>
-            Apaixonado por Javascript e desenvolvimento de aplicações. Gosto de
-            solucionar problemas usando programação. Muito curioso, sempre estou
-            rastreando as novas tecnologias na área.
-          </p>
-
+          <h1>{title}</h1>
+          <h3 className={styles.subTitle}>{subtitle}</h3>
+          <p className={styles.description}>{presentation}</p>
+          
           <a className={styles.contactMe} href="#contact">
             Entre em contato
           </a>
