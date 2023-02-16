@@ -99,10 +99,11 @@
 }
 
 .home .content .contentImage .image {
-  width: 50%;
+  width: 60%;
   mask-image: url("../../../public/assets/blob.svg");
   mask-repeat: no-repeat;
-  mask-position: 0px -5px;
+  mask-position: 50% 80%;
+  mask-size: 120%;
 }
 
 @media (max-width: 800px) {

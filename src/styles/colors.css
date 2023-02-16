@@ -5,12 +5,12 @@
   --highlight-color: #821421;
   --gray: #444;
   --title-color: #eee;
-  --background-color: #100d0d;
+  --background-color: #141318;
   --background-color-secondary: linear-gradient(
     to right,
-    #100d0d,
-    #120f0f,
-    #100d0d
+    #141318,
+    #100e13,
+    #141318
   );
   --text-color: #eee;
   --text-color-light: #aaa;
@@ -19,10 +19,10 @@
 }
 
 .light-theme {
-  --first-color: #a41728;
-  --first-color-light: #a7414c;
+  --first-color: #000;
+  --first-color-light: #333;
   --second-color: #eee;
-  --highlight-color: #ac0014;
+  --highlight-color: #790210;
   --gray: #999;
   --background-color: #fff;
   --background-color-secondary: #f1f1f1;
@@ -30,6 +30,6 @@
   --title-color: #111;
   --text-color: #111;
   --text-color-light: #555;
-  --button-color: #a7414c;
+  --button-color: #490e15;
   --button-text-color: #fff;
 }

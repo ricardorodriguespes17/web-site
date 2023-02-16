@@ -1,17 +1,19 @@
+import { useState } from "react";
 import Section from "./Section";
 import { BsChevronDown, BsLayoutWtf } from "react-icons/bs";
 import { MdWeb } from "react-icons/md";
 import { CgDatabase } from "react-icons/cg";
+import RangeBar from "./RangeBar";
+import useInfo from "../hooks/useInfo";
 
 import styles from "../styles/components/Skills.module.css";
-import { useState } from "react";
-import { BiMobileAlt } from "react-icons/bi";
-import RangeBar from "./RangeBar";
 
 export default function Skills() {
   const [openedSkill1, setOpenedSkill1] = useState(true);
   const [openedSkill2, setOpenedSkill2] = useState(false);
   const [openedSkill3, setOpenedSkill3] = useState(false);
+
+  const { skills } = useInfo();
 
   return (
     <Section
@@ -35,13 +37,9 @@ export default function Skills() {
             />
           </div>
           <div className={styles.skills}>
-            <RangeBar title="ReactJS" percent={100} />
-            <RangeBar title="HTML" percent={100} />
-            <RangeBar title="Javascript" percent={100} />
-            <RangeBar title="CSS" percent={90} />
-            <RangeBar title="NextJS" percent={80} />
-            <RangeBar title="React Native" percent={70} />
-            <RangeBar title="ElectronJS" percent={60} />
+            {skills.frontend.map(item => 
+              <RangeBar key={item.skill} title={item.skill} percent={item.percent} />
+            )}
           </div>
         </div>
         {/* Backend */}
@@ -59,14 +57,12 @@ export default function Skills() {
             />
           </div>
           <div className={styles.skills}>
-            <RangeBar title="NodeJS" percent={100} />
-            <RangeBar title="Express" percent={90} />
-            <RangeBar title="Firebase" percent={80} />
-            <RangeBar title="Knex" percent={80} />
-            <RangeBar title="PostegreSQL" percent={70} />
+            {skills.backend.map(item =>
+              <RangeBar key={item.skill} title={item.skill} percent={item.percent} />
+            )}
           </div>
         </div>
-        {/* Mobile */}
+        {/* Others */}
         <div
           className={
             openedSkill3 ? styles.skill + " " + styles.opened : styles.skill
@@ -81,9 +77,9 @@ export default function Skills() {
             />
           </div>
           <div className={styles.skills}>
-            <RangeBar title="Java" percent={80} />
-            <RangeBar title="C++" percent={75} />
-            <RangeBar title="Python" percent={60} />
+            {skills.others.map(item =>
+              <RangeBar key={item.skill} title={item.skill} percent={item.percent} />
+            )}
           </div>
         </div>
       </div>
