@@ -15,7 +15,6 @@ export default function Section({
   description,
   children,
 }: SectionProps) {
-  const { onMouseInPage } = useContext(PageContext);
 
   return (
     <section id={id} className={styles.container}>

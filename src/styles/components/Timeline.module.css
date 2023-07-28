@@ -21,7 +21,7 @@
 .component .line .dots {
   height: 100%;
 
-  margin: 0 7px;
+  margin: 0 5px;
 
   display: flex;
   gap: 7px;
@@ -33,6 +33,15 @@
   background-color: var(--background-color);
 }
 
+.component .points {
+  position: absolute;
+
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+}
+
 .component .point {
   width: 20px;
   height: 20px;
@@ -41,8 +50,6 @@
   border: 3px solid var(--first-color-light);
 
   background-color: var(--background-color);
-
-  position: absolute;
 }
 
 .component .descriptions {
@@ -51,7 +58,10 @@
   height: 100px;
 
   display: flex;
+  justify-content: space-around;
   align-items: center;
+
+  padding: 0 20px;
 
   position: relative;
 }
@@ -64,12 +74,12 @@
   gap: 5px;
 
   width: 200px;
+  height: 100px !important;
 
   font-size: 12px;
 
   text-align: center;
 
-  position: absolute;
 }
 
 .component .pointDescription strong {
@@ -86,17 +96,7 @@
   }
 }
 
-@media (min-width: 700px) {
-  .component .descriptions .pointDescription {
-    top: auto !important;
-  }
-
-  .component .point {
-    top: auto !important;
-  }
-}
-
-@media (max-width: 699px) {
+@media (max-width: 700px) {
   .component {
     flex-direction: row;
 
@@ -119,6 +119,7 @@
   .component .descriptions {
     flex-direction: column;
     height: 100%;
+    justify-content: space-between;
   }
 
   .component .pointDescription {
@@ -130,7 +131,13 @@
     margin-left: 0 !important;
   }
 
+  .component .points {
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+
   .component .point {
-    left: auto !important;
+    top: auto !important;
   }
 }

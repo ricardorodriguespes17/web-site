@@ -8,8 +8,9 @@ import {
 import { BsChatDots } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
 import { IoMdSchool } from "react-icons/io";
-import { useContext, useState } from "react";
-import { PageContext } from "../contexts/pageContext";
+import { useEffect, useState } from "react";
+import useInfo from "../hooks/useInfo";
+import useLanguage from "../hooks/useLanguage";
 
 interface HeaderProps {
   isDarkTheme: boolean;
@@ -22,17 +23,23 @@ export default function Header({
   floating,
   onChangeTheme,
 }: HeaderProps) {
-  const { mouseInPage } = useContext(PageContext);
 
-  const [links] = useState([
-    { link: "home", title: "Home", Icon: BiHome },
-    { link: "about", title: "Sobre", Icon: AiOutlineUser },
-    { link: "formation", title: "Formação", Icon: IoMdSchool },
-    { link: "skills", title: "Habilidades", Icon: AiOutlineRocket },
-    { link: "portifolio", title: "Portifólio", Icon: FiGithub },
-    { link: "projects", title: "Projetos", Icon: AiOutlineProject },
-    { link: "contact", title: "Contato", Icon: BsChatDots },
-  ]);
+  const { aboutTitle, formationTitle, skillsTitle, portifolioTitle, projectsTitle, contactTitle } = useInfo();
+  const { changeToPortuguese, changeToEnglish } = useLanguage();
+
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    setLinks([
+      { link: "home", title: "Home", Icon: BiHome },
+      { link: "about", title: aboutTitle, Icon: AiOutlineUser },
+      { link: "formation", title: formationTitle, Icon: IoMdSchool },
+      { link: "skills", title: skillsTitle, Icon: AiOutlineRocket },
+      { link: "portifolio", title: portifolioTitle, Icon: FiGithub },
+      { link: "projects", title: projectsTitle, Icon: AiOutlineProject },
+      { link: "contact", title: contactTitle, Icon: BsChatDots },
+    ]);
+  }, [aboutTitle]);
 
   return (
     <header
@@ -50,6 +57,15 @@ export default function Header({
           </li>
         ))}
       </ul>
+
+      <div className={styles.changeLanguage}>
+        <button onClick={() => changeToPortuguese()}>
+          <img src="assets/brasil.png" alt="Bandeira dos Estados Unidos" />
+        </button>
+        <button onClick={() => changeToEnglish()}>
+          <img src="assets/usa.png" alt="Bandeira do Brasil" />
+        </button>
+      </div>
 
       <button className={styles.themeToggle} onClick={() => onChangeTheme()}>
         {isDarkTheme ? <BiSun /> : <BiMoon />}

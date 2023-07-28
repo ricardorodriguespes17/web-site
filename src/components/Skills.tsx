@@ -13,13 +13,13 @@ export default function Skills() {
   const [openedSkill2, setOpenedSkill2] = useState(false);
   const [openedSkill3, setOpenedSkill3] = useState(false);
 
-  const { skills } = useInfo();
+  const { skills, skillsSubtitle, skillsTitle, othersText } = useInfo();
 
   return (
     <Section
       id="skills"
-      title="Habilidades"
-      description="Minhas habilidades na área"
+      title={skillsTitle}
+      description={skillsSubtitle}
     >
       <div className={styles.content}>
         {/* Frontend */}
@@ -37,7 +37,7 @@ export default function Skills() {
             />
           </div>
           <div className={styles.skills}>
-            {skills.frontend.map(item => 
+            {skills.frontend.map(item =>
               <RangeBar key={item.skill} title={item.skill} percent={item.percent} />
             )}
           </div>
@@ -70,7 +70,7 @@ export default function Skills() {
         >
           <div className={styles.skillTitle}>
             <BsLayoutWtf className={styles.titleIcon} />
-            <h2>Outros</h2>
+            <h2>{othersText}</h2>
             <BsChevronDown
               className={styles.arrowIcon}
               onClick={() => setOpenedSkill3(!openedSkill3)}

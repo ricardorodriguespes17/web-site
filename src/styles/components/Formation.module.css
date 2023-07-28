@@ -15,29 +15,6 @@
   margin-top: 10px;
 }
 
-.content .header button {
-  height: 30px;
-
-  display: flex;
-  align-items: center;
-  gap: 5px;
-
-  padding: 5px 10px;
-
-  border-radius: 5px;
-
-  background-color: #a37d7d30;
-}
-
-.content .header button:hover {
-  background-color: #33333390;
-}
-
-.content .header button.selected {
-  background-color: var(--first-color);
-  color: #fff;
-}
-
 @media (max-width: 400px) {
   .content {
     padding: 0;

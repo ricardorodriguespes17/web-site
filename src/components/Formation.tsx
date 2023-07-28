@@ -4,48 +4,56 @@ import styles from "../styles/components/Formation.module.css";
 import { useState } from "react";
 import Timeline from "./Timeline";
 import { IoMdSchool } from "react-icons/io";
-import { MdBusinessCenter } from "react-icons/md";
+import { MdBusinessCenter, MdEventAvailable } from "react-icons/md";
+import { PiCertificateBold } from "react-icons/pi";
 import useInfo from "../hooks/useInfo";
+import FormationClass from "./FormationClass";
+import FormationEnum from "../types/FormationEnum";
 
 export default function Formation() {
-  const [formationOpened, setFormationOpened] = useState<
-    "academic" | "professional"
-  >("academic");
+  const [formationOpened, setFormationOpened] = useState<FormationEnum>(FormationEnum.ACADEMIC);
 
-  const {academicFormation, professionalFormation} = useInfo()
+  const { academicFormation, professionalFormation, coursesFormation, eventsFormation, formationTitle, formationSubtitle, academicTitle, professionalTitle, eventsTitle, coursesTitle } = useInfo();
 
   return (
     <Section
       id="formation"
-      title="Formação"
-      description="Marcos importantes na minha trajetória acadêmica e profissional"
+      title={formationTitle}
+      description={formationSubtitle}
     >
       <div className={styles.content}>
         <div className={styles.header}>
-          <button
-            className={formationOpened === "academic" ? styles.selected : ""}
-            onClick={() => setFormationOpened("academic")}
-          >
+          <FormationClass thisFormation={FormationEnum.ACADEMIC} formationOpened={formationOpened} setFormationOpened={() => setFormationOpened(FormationEnum.ACADEMIC)}>
             <IoMdSchool />
-            Acadêmica
-          </button>
-
-          <button
-            className={
-              formationOpened === "professional" ? styles.selected : ""
-            }
-            onClick={() => setFormationOpened("professional")}
-          >
+            {academicTitle}
+          </FormationClass>
+          <FormationClass thisFormation={FormationEnum.COURSES} formationOpened={formationOpened} setFormationOpened={() => setFormationOpened(FormationEnum.COURSES)}>
+            <PiCertificateBold />
+            {coursesTitle}
+          </FormationClass>
+          <FormationClass thisFormation={FormationEnum.EVENTS} formationOpened={formationOpened} setFormationOpened={() => setFormationOpened(FormationEnum.EVENTS)}>
+            <MdEventAvailable />
+            {eventsTitle}
+          </FormationClass>
+          <FormationClass thisFormation={FormationEnum.PROFESSIONAL} formationOpened={formationOpened} setFormationOpened={() => setFormationOpened(FormationEnum.PROFESSIONAL)}>
             <MdBusinessCenter />
-            Profissional
-          </button>
+            {professionalTitle}
+          </FormationClass>
         </div>
 
-        {formationOpened === "academic" && (
+        {formationOpened === FormationEnum.ACADEMIC && (
           <Timeline timePoints={academicFormation} />
         )}
 
-        {formationOpened === "professional" && (
+        {formationOpened === FormationEnum.COURSES && (
+          <Timeline timePoints={coursesFormation} />
+        )}
+
+        {formationOpened === FormationEnum.EVENTS && (
+          <Timeline timePoints={eventsFormation} />
+        )}
+
+        {formationOpened === FormationEnum.PROFESSIONAL && (
           <Timeline timePoints={professionalFormation} />
         )}
       </div>

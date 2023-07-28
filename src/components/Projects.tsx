@@ -1,13 +1,16 @@
 import Section from "./Section";
+import useInfo from "../hooks/useInfo";
 
 import styles from "../styles/components/Projects.module.css";
 
 export default function Projects() {
+  const { projectsTitle, projectsSubtitle } = useInfo();
+
   return (
     <Section
       id="projects"
-      title="Projetos"
-      description="Alguns projetos práticos"
+      title={projectsTitle}
+      description={projectsSubtitle}
     >
       <div className={styles.content}>
         <a

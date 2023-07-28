@@ -1,0 +1,22 @@
+.buttonFormation {
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px 10px;
+
+  border-radius: 5px;
+
+  background-color: #a37d7d30;
+}
+
+.buttonFormation:hover {
+  background-color: #33333390;
+}
+
+.buttonFormation.selected {
+  background-color: var(--first-color);
+  color: #fff;
+}

@@ -12,7 +12,7 @@ import styles from "../styles/components/Footer.module.css";
 
 export default function Footer() {
   const { onMouseInPage } = useContext(PageContext);
-  const { contacts } = useInfo()
+  const { contacts, aboutTitle, skillsTitle, formationTitle, portifolioTitle } = useInfo();
 
   return (
     <footer
@@ -22,10 +22,10 @@ export default function Footer() {
     >
       <div className={styles.pageContents}>
         <a href="#home">Home</a>
-        <a href="#about">Sobre</a>
-        <a href="#skills">Habilidades</a>
-        <a href="#formation">Formação</a>
-        <a href="#portifolio">Portifólio</a>
+        <a href="#about">{aboutTitle}</a>
+        <a href="#skills">{skillsTitle}</a>
+        <a href="#formation">{formationTitle}</a>
+        <a href="#portifolio">{portifolioTitle}</a>
       </div>
 
       <div className={styles.contactMe}>

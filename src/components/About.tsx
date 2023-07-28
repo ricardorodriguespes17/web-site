@@ -5,10 +5,10 @@ import styles from "../styles/components/About.module.css";
 import useInfo from "../hooks/useInfo";
 
 export default function About() {
-  const { aboutText1, aboutText2 } = useInfo()
+  const { aboutText1, aboutText2, aboutTitle, aboutSubtitle, CVButton } = useInfo();
 
   return (
-    <Section id="about" title="Sobre" description="Um pouco sobre mim">
+    <Section id="about" title={aboutTitle} description={aboutSubtitle}>
       <div className={styles.content}>
         <div className={styles.contentImage}>
           <img src="assets/about.jpg" alt="Foto de Ricardo Rodrigues" />
@@ -25,11 +25,11 @@ export default function About() {
           </div>
 
           <a
-            href="Ricardo_CV.pdf"
+            href="https://drive.google.com/file/d/1Zf4KKK5Z4yk9emhPMXro-_m3FrjYHiZF/view?usp=drive_link"
             target="_blank"
             className={styles.downloadCV}
           >
-            Baixar CV
+            {CVButton}
             <BsDownload />
           </a>
         </div>
