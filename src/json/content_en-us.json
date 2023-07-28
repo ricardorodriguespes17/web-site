@@ -1,0 +1,86 @@
+{
+    "title": "Nice to meet you, Ricardo Rodrigues",
+    "subtitle": "Fullstack Developer",
+    "presentation": "I am passionate about JavaScript and application development. I enjoy solving problems using programming. Very curious, I am always tracking the new technologies in the field.",
+    "contactMeButton": "Contact me",
+    "aboutTitle": "About me",
+    "aboutSubtitle": "A little about me",
+    "aboutText1": "Undergraduate in Computer Science at Universidade Estadual do Sudoeste da Bahia (UESB).",
+    "aboutText2": "In search of new challenges in the field of programming, contributing increasingly to the advancement of information technology, as I believe this will continue to change the world for the better.",
+    "CVButton": "Open CV",
+    "formationTitle": "Formation",
+    "formationSubtitle": "Significant milestones in my academic and professional journey",
+    "academicTitle": "Academic",
+    "professionalTitle": "Profissional",
+    "coursesTitle": "Courses",
+    "eventsTitle": "Events",
+    "eventsFormation": [
+      { "title": "Campus Party Bahia", "period": "2018" },
+      { "title": "Semana da Computação da UESB", "period": "2018" },
+      { "title": "Semana da Computação da UESB", "period": "2019" },
+      { "title": "Semana Omnistack", "period": "2019" },
+      { "title": "Semana da Integração da UESB", "period": "2023" },
+      { "title": "Campus Party Brasil", "period": "2023" }
+    ],
+    "academicFormation": [
+      { "title": "Technical in Informatics at IFNMG", "period": "2014 - 2018" },
+      { "title": "Computer Science at UESB", "period": "2017 - present" }
+    ],
+    "coursesFormation": [
+      { "title": "Introduction to Javascript - Udemy", "period": "2019" },
+      { "title": "Introduction to Python - Udemy", "period": "2019" },
+      { "title": "React Native Course - Udemy", "period": "2019" },
+      { "title": "Ionic Course - Udemy", "period": "2022" },
+      { "title": "Design Patterns Course - Udemy", "period": "2023" }
+    ],
+    "professionalFormation": [
+      { "title": "Internship in programming - Mercadótica Franquias", "period": "2020 - 2021" },
+      { "title": "React Developer - FWC Tecnologia", "period": "2021" },
+      { "title": "Fullstack Developer - Órulo", "period": "2021 - 2022" },
+      { "title": "Fullstack Developer - Vetta", "period": "2022 - 2023" }
+    ],
+    "skillsTitle": "Skills",
+    "skillsSubtitle": "My skills in programming",
+    "othersText": "Others",
+    "skills": {
+      "frontend": [
+        { "skill": "ReactJS", "percent": 100 },
+        { "skill": "HTML", "percent": 100 },
+        { "skill": "Typescript", "percent": 100 },
+        { "skill": "CSS", "percent": 100 },
+        { "skill": "AngularJS", "percent": 80 },
+        { "skill": "NextJS", "percent": 70 },
+        { "skill": "React Native", "percent": 70 }
+      ],
+      "backend": [
+        { "skill": "NodeJS", "percent": 100 },
+        { "skill": "Express", "percent": 90 },
+        { "skill": "Firebase", "percent": 70 },
+        { "skill": "Knex", "percent": 70 },
+        { "skill": "PostegreSQL", "percent": 60 }
+      ],
+      "others": [
+        { "skill": "Java", "percent": 80 },
+        { "skill": "Docker", "percent": 80 },
+        { "skill": "C++", "percent": 70 },
+        { "skill": "Python", "percent": 60 },
+        { "skill": "Haskell", "percent": 50 }
+      ]
+    },
+    "portifolioTitle": "Portifolio",
+    "portifolioSubtitle": "My portifolio in the Github",
+    "publicRepoText": "public repositories",
+    "integrationText": "Integrated with Github's API",
+    "seeMoreText": "See more",
+    "projectsTitle": "Projects",
+    "projectsSubtitle": "Some practical projects",
+    "contactTitle": "Contact",
+    "contacts": {
+      "email": "ricardor662@gmail.com",
+      "whatsapp": "+55 77 988792719",
+      "whatsappLink": "https://api.whatsapp.com/send?phone=55988792719&text=Ol%C3%A1%2C%20Ricardo!",
+      "linkedin": "https://www.linkedin.com/in/ricardorodrigues17/",
+      "instagram": "https://www.instagram.com/ricardo_rodrigues17/",
+      "facebook": "https://www.facebook.com/ricardorodrigues17"
+    }
+  }

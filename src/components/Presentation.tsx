@@ -8,7 +8,7 @@ import styles from "../styles/components/Presentation.module.css";
 
 export default function Presentation() {
   const { onMouseInPage } = useContext(PageContext);
-  const { title, subtitle, presentation } = useInfo();
+  const { title, subtitle, presentation, contactMeButton, seeMoreText } = useInfo();
 
   return (
     <div
@@ -21,14 +21,14 @@ export default function Presentation() {
           <h1>{title}</h1>
           <h3 className={styles.subTitle}>{subtitle}</h3>
           <p className={styles.description}>{presentation}</p>
-          
+
           <a className={styles.contactMe} href="#contact">
-            Entre em contato
+            {contactMeButton}
           </a>
 
           <a className={styles.scrollDown} href="#about">
             <BiMouse className={styles.mouseIcon} />
-            <p>Ver mais</p>
+            <p>{seeMoreText}</p>
             <BsArrowDownShort className={styles.arrowDownIcon} />
           </a>
         </div>

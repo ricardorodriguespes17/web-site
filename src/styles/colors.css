@@ -2,7 +2,7 @@
   --first-color: #9c0404;
   --first-color-light: #b94040;
   --second-color: #111;
-  --highlight-color: #861212;
+  --highlight-color: #ff7c7c;
   --gray: #444;
   --title-color: #eee;
   --background-color: #040410;
@@ -22,7 +22,7 @@
   --first-color: #000;
   --first-color-light: #333;
   --second-color: #eee;
-  --highlight-color: #790202;
+  --highlight-color: #961111;
   --gray: #999;
   --background-color: #fff;
   --background-color-secondary: #f1f1f1;
@@ -30,6 +30,6 @@
   --title-color: #111;
   --text-color: #111;
   --text-color-light: #555;
-  --button-color: #490e0e;
+  --button-color: #681717;
   --button-text-color: #fff;
 }

@@ -4,9 +4,10 @@ import { useState } from "react";
 import { GoRepo } from "react-icons/go";
 import { MdLocationOn } from "react-icons/md";
 import { githubApi } from "../services/api";
+import useInfo from "../hooks/useInfo";
+import { BsArrowRightShort } from "react-icons/bs";
 
 import styles from "../styles/components/Portifolio.module.css";
-import { BsArrowRightShort } from "react-icons/bs";
 
 interface RepoType {
   id: string;
@@ -32,6 +33,8 @@ interface UserType {
 export default function Portifolio() {
   const [repos, setRepos] = useState<RepoType[]>([]);
   const [user, setUser] = useState<UserType>();
+  const { portifolioTitle, portifolioSubtitle, publicRepoText, seeMoreText, integrationText } = useInfo();
+
 
   useEffect(() => {
     loadUser();
@@ -73,8 +76,8 @@ export default function Portifolio() {
   return (
     <Section
       id="portifolio"
-      title="Portifólio"
-      description="Meu portifólio no Github"
+      title={portifolioTitle}
+      description={portifolioSubtitle}
     >
       <div className={styles.content}>
         {user && (
@@ -90,7 +93,7 @@ export default function Portifolio() {
               <p>
                 <MdLocationOn /> {user.location}
               </p>
-              <p>{user.public_repos} repositórios públicos</p>
+              <p>{user.public_repos} {publicRepoText}</p>
             </div>
           </div>
         )}
@@ -113,10 +116,10 @@ export default function Portifolio() {
         </div>
 
         <div className={styles.footer}>
-          <p className={styles.credits}>Integrado com a API do Github</p>
+          <p className={styles.credits}>{integrationText}</p>
           {user && (
             <a target="_blank" href={user.html_url}>
-              Ver mais
+              {seeMoreText}
               <BsArrowRightShort className={styles.icon} />
             </a>
           )}

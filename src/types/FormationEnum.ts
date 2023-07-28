@@ -1,7 +1,8 @@
 enum FormationEnum {
   ACADEMIC,
   PROFESSIONAL,
-  COURSES
+  COURSES,
+  EVENTS
 }
 
 export default FormationEnum;
