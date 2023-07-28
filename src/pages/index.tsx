@@ -20,17 +20,8 @@ export default function Home() {
     const element = document.getElementById("__next");
 
     element.onscroll = () => {
-      if (element.scrollTop > 50) {
-        setIsLateralHeader(true);
-      } else {
-        setIsLateralHeader(false);
-      }
-
-      if (element.scrollTop > 200) {
-        setIsShowedScrollTop(true);
-      } else {
-        setIsShowedScrollTop(false);
-      }
+      setIsLateralHeader(element.scrollTop > 50);
+      setIsShowedScrollTop(element.scrollTop > 200);
     };
   }, []);
 

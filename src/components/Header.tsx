@@ -22,7 +22,6 @@ export default function Header({
   floating,
   onChangeTheme,
 }: HeaderProps) {
-  const { mouseInPage } = useContext(PageContext);
 
   const [links] = useState([
     { link: "home", title: "Home", Icon: BiHome },

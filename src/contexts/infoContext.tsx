@@ -7,12 +7,13 @@ interface InfoContextProps {
     presentation: string,
     aboutText1: string,
     aboutText2: string,
-    academicFormation: {title: string, period: string}[],
-    professionalFormation: {title: string, period: string}[],
+    academicFormation: { title: string, period: string; }[],
+    coursesFormation: { title: string, period: string; }[],
+    professionalFormation: { title: string, period: string; }[],
     skills: {
-      frontend: {skill: string, percent: number}[],
-      backend: {skill: string, percent: number}[],
-      others: {skill: string, percent: number}[]
+      frontend: { skill: string, percent: number; }[],
+      backend: { skill: string, percent: number; }[],
+      others: { skill: string, percent: number; }[];
     },
     contacts: {
       email: string,
@@ -20,8 +21,8 @@ interface InfoContextProps {
       whatsappLink: string,
       linkedin: string,
       instagram: string,
-      facebook: string
-    }
+      facebook: string;
+    };
   };
 }
 
@@ -34,46 +35,55 @@ export const InfoContext = createContext({} as InfoContextProps);
 export default function InfoProvider({ children }: InfoProviderProps) {
   const [info] = useState({
     title: "Prazer, Ricardo Rodrigues",
-    subtitle: "Desenvolvedor Frontend",
+    subtitle: "Desenvolvedor Fullstack",
     presentation: "Apaixonado por Javascript e desenvolvimento de aplicações. Gosto de solucionar problemas usando programação. Muito curioso, sempre estou rastreando as novas tecnologias na área.",
     aboutText1: "Cursando Ciência da Computação na Universidade Estadual do Sudoeste da Bahia (UESB).",
     aboutText2: "Em busca de novos desafios na área da programação, contribuindo cada vez mais para o avanço da tecnologia da informação, pois acredito que isso tende a mudar cada vez mais o mundo para melhor.",
+    events: [
+      { title: "Campus Party Bahia", period: "2018" },
+      { title: "Semana da Computação da UESB", period: "2018" },
+      { title: "Semana da Computação da UESB", period: "2019" },
+      { title: "Semana da Integração da UESB", period: "2023" },
+      { title: "Campus Party Brasil", period: "2023" },
+    ],
     academicFormation: [
-      {title: "Técnico em Informática - IFNMG", period: "2014 - 2018"},
-      {title: "Ciência da Computação - UESB", period: "2017 - atual"},
-      {title: "Curso de Javascript - Udemy", period: "2019"},
-      {title: "Curso de React Native - Udemy", period: "2019"},
+      { title: "Técnico em Informática - IFNMG", period: "2014 - 2018" },
+      { title: "Ciência da Computação - UESB", period: "2017 - atual" },
+    ],
+    coursesFormation: [
+      { title: "Curso de Javascript - Udemy", period: "2019" },
+      { title: "Curso de React Native - Udemy", period: "2019" },
+      { title: "Curso de Design Patterns - Udemy", period: "2023" },
     ],
     professionalFormation: [
-      {title: "Minicurso Android Studio - UESB", period: "2018"},
-      {title: "Estagiário de programação - Mercadótica Franquias", period: "2020 - 2021"},
-      {title: "Desenvolvedor React - FWC Tecnologia", period: "2021"},
-      {title: "Desenvolvedor React - Órulo", period: "2021 - 2022"},
-      {title: "Desenvolvedor React/Angular - Vetta", period: "2022 - atual"},
+      { title: "Estagiário de programação - Mercadótica Franquias", period: "2020 - 2021" },
+      { title: "Desenvolvedor React - FWC Tecnologia", period: "2021" },
+      { title: "Desenvolvedor Fullstack - Órulo", period: "2021 - 2022" },
+      { title: "Desenvolvedor Fullstack - Vetta", period: "2022 - 2023" },
     ],
     skills: {
       frontend: [
-        {skill: 'ReactJS', percent: 100},
-        {skill: 'HTML', percent: 100},
-        {skill: 'Javascript', percent: 100},
-        {skill: 'CSS', percent: 100},
-        {skill: 'AngularJS', percent: 80},
-        {skill: 'NextJS', percent: 70},
-        {skill: 'React Native', percent: 70},
-        {skill: 'ElectronJS', percent: 50},
+        { skill: 'ReactJS', percent: 100 },
+        { skill: 'HTML', percent: 100 },
+        { skill: 'Javascript', percent: 100 },
+        { skill: 'CSS', percent: 100 },
+        { skill: 'AngularJS', percent: 80 },
+        { skill: 'NextJS', percent: 70 },
+        { skill: 'React Native', percent: 70 },
       ],
       backend: [
-        {skill: 'NodeJS', percent: 90},
-        {skill: 'Express', percent: 90},
-        {skill: 'Firebase', percent: 70},
-        {skill: 'Knex', percent: 70},
-        {skill: 'PostegreSQL', percent: 60},
+        { skill: 'NodeJS', percent: 100 },
+        { skill: 'Express', percent: 90 },
+        { skill: 'Firebase', percent: 70 },
+        { skill: 'Knex', percent: 70 },
+        { skill: 'PostegreSQL', percent: 60 },
       ],
       others: [
-        {skill: 'Java', percent: 80},
-        {skill: 'C++', percent: 70},
-        {skill: 'Python', percent: 60},
-        {skill: 'Haskell', percent: 60},
+        { skill: 'Java', percent: 80 },
+        { skill: 'Docker', percent: 80 },
+        { skill: 'C++', percent: 70 },
+        { skill: 'Python', percent: 60 },
+        { skill: 'Haskell', percent: 50 },
       ]
     },
     contacts: {
@@ -84,7 +94,7 @@ export default function InfoProvider({ children }: InfoProviderProps) {
       instagram: 'https://www.instagram.com/ricardo_rodrigues17/',
       facebook: 'https://www.facebook.com/ricardorodrigues17'
     }
-  })
+  });
 
   return (
     <InfoContext.Provider value={{ info }}>

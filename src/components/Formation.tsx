@@ -5,14 +5,15 @@ import { useState } from "react";
 import Timeline from "./Timeline";
 import { IoMdSchool } from "react-icons/io";
 import { MdBusinessCenter } from "react-icons/md";
+import { PiCertificateBold } from "react-icons/pi";
 import useInfo from "../hooks/useInfo";
+import FormationClass from "./FormationClass";
+import FormationEnum from "../types/FormationEnum";
 
 export default function Formation() {
-  const [formationOpened, setFormationOpened] = useState<
-    "academic" | "professional"
-  >("academic");
+  const [formationOpened, setFormationOpened] = useState<FormationEnum>(FormationEnum.ACADEMIC);
 
-  const {academicFormation, professionalFormation} = useInfo()
+  const { academicFormation, professionalFormation, coursesFormation } = useInfo();
 
   return (
     <Section
@@ -22,7 +23,17 @@ export default function Formation() {
     >
       <div className={styles.content}>
         <div className={styles.header}>
-          <button
+          <FormationClass thisFormation={FormationEnum.ACADEMIC} formationOpened={formationOpened} setFormationOpened={() => setFormationOpened(FormationEnum.ACADEMIC)}>
+            <IoMdSchool />
+          </FormationClass>
+          <FormationClass thisFormation={FormationEnum.COURSES} formationOpened={formationOpened} setFormationOpened={() => setFormationOpened(FormationEnum.COURSES)}>
+            <PiCertificateBold />
+          </FormationClass>
+          <FormationClass thisFormation={FormationEnum.PROFESSIONAL} formationOpened={formationOpened} setFormationOpened={() => setFormationOpened(FormationEnum.PROFESSIONAL)}>
+            <MdBusinessCenter />
+          </FormationClass>
+
+          {/* <button
             className={formationOpened === "academic" ? styles.selected : ""}
             onClick={() => setFormationOpened("academic")}
           >
@@ -38,14 +49,18 @@ export default function Formation() {
           >
             <MdBusinessCenter />
             Profissional
-          </button>
+          </button> */}
         </div>
 
-        {formationOpened === "academic" && (
+        {formationOpened === FormationEnum.ACADEMIC && (
           <Timeline timePoints={academicFormation} />
         )}
 
-        {formationOpened === "professional" && (
+        {formationOpened === FormationEnum.COURSES && (
+          <Timeline timePoints={coursesFormation} />
+        )}
+
+        {formationOpened === FormationEnum.PROFESSIONAL && (
           <Timeline timePoints={professionalFormation} />
         )}
       </div>
