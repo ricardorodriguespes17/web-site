@@ -11,12 +11,15 @@ import { IoMdSchool } from "react-icons/io";
 import { useEffect, useState } from "react";
 import useInfo from "../hooks/useInfo";
 import useLanguage from "../hooks/useLanguage";
+import { IconType } from "react-icons/lib";
 
 interface HeaderProps {
   isDarkTheme: boolean;
   floating: boolean;
   onChangeTheme: () => void;
 }
+
+interface LinkType { link: string, title: string, Icon: IconType; }
 
 export default function Header({
   isDarkTheme,
@@ -27,7 +30,7 @@ export default function Header({
   const { aboutTitle, formationTitle, skillsTitle, portifolioTitle, projectsTitle, contactTitle } = useInfo();
   const { changeToPortuguese, changeToEnglish } = useLanguage();
 
-  const [links, setLinks] = useState([]);
+  const [links, setLinks] = useState<LinkType[]>([]);
 
   useEffect(() => {
     setLinks([
