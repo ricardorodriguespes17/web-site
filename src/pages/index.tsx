@@ -19,6 +19,9 @@ export default function Home() {
   useEffect(() => {
     const element = document.getElementById("__next");
 
+    if (element === null)
+      return;
+
     element.onscroll = () => {
       setIsLateralHeader(element.scrollTop > 50);
       setIsShowedScrollTop(element.scrollTop > 200);
