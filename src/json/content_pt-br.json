@@ -8,6 +8,7 @@
     "aboutText1": "Cursando Ciência da Computação na Universidade Estadual do Sudoeste da Bahia (UESB).",
     "aboutText2": "Em busca de novos desafios na área da programação, contribuindo cada vez mais para o avanço da tecnologia da informação, pois acredito que isso tende a mudar cada vez mais o mundo para melhor.",
     "CVButton": "Abrir CV",
+    "CVLink": "https://drive.google.com/file/d/1i444nZKAnfqXwPtdnMmU_XDmw5RGKhsY/view?usp=sharing",
     "formationTitle": "Formação",
     "formationSubtitle": "Marcos importantes na minha trajetória acadêmica e profissional",
     "academicTitle": "Acadêmica",
@@ -31,13 +32,15 @@
       { "title": "Curso de Python - Udemy", "period": "2019" },
       { "title": "Curso de React Native - Udemy", "period": "2019" },
       { "title": "Curso de Ionic - Udemy", "period": "2022" },
-      { "title": "Curso de Design Patterns - Udemy", "period": "2023" }
+      { "title": "Curso de Design Patterns - Udemy", "period": "2023" },
+      { "title": "Curso de Inglês - KNN", "period": "2023 - atual" }
     ],
     "professionalFormation": [
       { "title": "Estagiário de programação - Mercadótica Franquias", "period": "2020 - 2021" },
       { "title": "Desenvolvedor React - FWC Tecnologia", "period": "2021" },
       { "title": "Desenvolvedor Fullstack - Órulo", "period": "2021 - 2022" },
-      { "title": "Desenvolvedor Fullstack - Vetta", "period": "2022 - 2023" }
+      { "title": "Desenvolvedor Fullstack - Vetta", "period": "2022 - 2023" },
+      { "title": "Freelancer", "period": "2023 - atual" }
     ],
     "skillsTitle": "Habilidades",
     "skillsSubtitle": "Minha habilidades na área",

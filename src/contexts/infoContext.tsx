@@ -15,6 +15,7 @@ interface InfoContextProps {
     aboutText1: string,
     aboutText2: string,
     CVButton: string,
+    CVLink: string,
     formationTitle: string,
     formationSubtitle: string,
     academicTitle: string,
