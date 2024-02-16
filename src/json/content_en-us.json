@@ -8,6 +8,7 @@
     "aboutText1": "Undergraduate in Computer Science at Universidade Estadual do Sudoeste da Bahia (UESB).",
     "aboutText2": "In search of new challenges in the field of programming, contributing increasingly to the advancement of information technology, as I believe this will continue to change the world for the better.",
     "CVButton": "Open CV",
+    "CVLink": "https://drive.google.com/file/d/1kWqQnmyLd5wgtMJHgHswTKRi_Ubm6Gda/view?usp=sharing",
     "formationTitle": "Formation",
     "formationSubtitle": "Significant milestones in my academic and professional journey",
     "academicTitle": "Academic",
@@ -31,13 +32,15 @@
       { "title": "Introduction to Python - Udemy", "period": "2019" },
       { "title": "React Native Course - Udemy", "period": "2019" },
       { "title": "Ionic Course - Udemy", "period": "2022" },
-      { "title": "Design Patterns Course - Udemy", "period": "2023" }
+      { "title": "Design Patterns Course - Udemy", "period": "2023" },
+      { "title": "English Course - KNN", "period": "2023 - present" }
     ],
     "professionalFormation": [
       { "title": "Internship in programming - Mercadótica Franquias", "period": "2020 - 2021" },
       { "title": "React Developer - FWC Tecnologia", "period": "2021" },
       { "title": "Fullstack Developer - Órulo", "period": "2021 - 2022" },
-      { "title": "Fullstack Developer - Vetta", "period": "2022 - 2023" }
+      { "title": "Fullstack Developer - Vetta", "period": "2022 - 2023" },
+      { "title": "Freelancer", "period": "2023 - present" }
     ],
     "skillsTitle": "Skills",
     "skillsSubtitle": "My skills in programming",
